@@ -77,7 +77,7 @@ body{
 #switch{
     position: relative;
     width: 64px; 
-
+    
     margin: 4px auto;
 }
 
@@ -91,9 +91,16 @@ body{
     position: absolute;
     left: 0;
     z-index: 1;
-
+    
     transform: translateY(-50%);
     top: 50%;
+
+    animation: slide-back .2s;
+}
+
+
+.light #switch button{
+    animation: slide-in .2s forwards;
 }
 
 #switch span{
@@ -106,10 +113,6 @@ body{
     border-radius: 999px;
 }
 
-.light #switch button{
-    right: 0;
-    left: initial;
-}
 
 ul{
     list-style: none;
@@ -123,8 +126,8 @@ ul li a{
     color: var(--text-color);
 
 /* centralizar elementos */
-    display: flex;
-    justify-content: center;
+display: flex;
+justify-content: center;
     align-items: center;
     justify-content: center;
 
@@ -132,14 +135,14 @@ ul li a{
     background: var(--surface-color);
     border: 1px solid var(--stroke-color);
     border-radius: 8px;
-
+    
     backdrop-filter: blur(4px);
-
+    
     text-decoration: none;
     font-weight: 500;
-
+    
     transition: background 0.2s;
-
+    
 }
 
 
@@ -153,4 +156,24 @@ footer{
     text-align: center;
     padding: 24px 0;
     font-size: 14px;
+}
+
+
+/* animation */
+@keyframes slide-in{
+    from {
+        left: 0;
+    }
+    to { 
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
 }
